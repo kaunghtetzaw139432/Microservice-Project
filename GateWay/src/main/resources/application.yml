@@ -1,0 +1,80 @@
+server:
+  port: 9000 
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: EMPLOYEE
+          uri: lb://EMPLOYEE
+          predicates:
+            - Path=/employees/**
+          filters:
+            - name: AuthFilter
+            - name: CircuitBreaker
+              args:
+                name: EMPLOYEE-SERVICE
+                fallbackUri: forward:/employeeServiceFallback
+
+        - id: ADDRESS
+          uri: lb://ADDRESS
+          predicates:
+            - Path=/address/**
+          filters:
+            - name: AuthFilter
+            - name: CircuitBreaker
+              args:
+                name: ADDRESS-SERVICE
+                fallbackUri: forward:/addressServiceFallback
+
+        - id: AUTH
+          uri: lb://AUTH
+          predicates:
+            - Path=/auth/**
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.netty.http.server: DEBUG
+
+resilience4j:
+  timelimiter:
+    instances:
+      ADDRESS-SERVICE:
+        timeoutDuration: 5s 
+      EMPLOYEE-SERVICE: 
+        timeoutDuration: 5s
+        
+  circuitbreaker:  
+    instances:
+      EMPLOYEE-SERVICE:
+        registerHealthIndicator: true    
+        slidingWindowSize: 5
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s    
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowType: COUNT_BASED
+      ADDRESS-SERVICE: 
+        registerHealthIndicator: true     
+        slidingWindowSize: 5
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s     
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowType: COUNT_BASED
+
+management:
+  health:
+    circuitbreakers:
+      enabled: true                      
+  endpoints:
+    web:
+      exposure:
+        include: "health,info,circuitbreakers,metrics,gateway"
+  endpoint:
+    health:
+      show-details: always

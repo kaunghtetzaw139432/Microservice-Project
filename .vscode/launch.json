@@ -1,0 +1,64 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-AddressApplication<Address>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.address.AddressApplication",
+            "projectName": "Address",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-EurekaServerApplication<EUREKA-SERVER>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.eureka_server.EurekaServerApplication",
+            "projectName": "EUREKA-SERVER",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-EmployeeApplication<Employee>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.employee.EmployeeApplication",
+            "projectName": "Employee",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-AuthApplication<AUTH>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.auth.AuthApplication",
+            "projectName": "AUTH",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-GateWayApplication<GateWay>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.gateway.GateWayApplication",
+            "projectName": "GateWay",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-CommonLibApplication<common-lib>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.commonlib.CommonLibApplication",
+            "projectName": "common-lib",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
