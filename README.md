@@ -1,6 +1,8 @@
 
 # 🚀 Spring Boot Microservices Ecosystem
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white) ![Spring Cloud](https://img.shields.io/badge/Spring_Cloud-6DB33F?style=for-the-badge&logo=spring&logoColor=white) ![Microservices](https://img.shields.io/badge/Architecture-Microservices-blue?style=for-the-badge) ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![Netflix Eureka](https://img.shields.io/badge/Service_Discovery-Eureka-orange?style=for-the-badge) ![API Gateway](https://img.shields.io/badge/API_Gateway-Spring_Cloud-green?style=for-the-badge)
+
+
 A robust, enterprise-grade Microservices architecture built with Spring Boot 3.3.x and Spring Cloud. This project demonstrates centralized routing, security, resilient communication, and shared library management.
 
 ---
