@@ -6,7 +6,7 @@ A robust, enterprise-grade Microservices architecture built with Spring Boot 3.3
 ---
 
 ## 🏗 System Architecture
-
+<img width="100%" alt="Image" src="https://github.com/user-attachments/assets/59607c99-33cd-4780-b256-e7c2d92ac0b6" />
 The ecosystem consists of the following components:
 
 - **Gateway Service (Port: 9000):** Central entry point using Spring Cloud Gateway with Auth Filter and Circuit Breaker (Resilience4j).
